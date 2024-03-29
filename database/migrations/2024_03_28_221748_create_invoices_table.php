@@ -8,24 +8,23 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-            $table->integer('customer_id');
-            $table->integer('amount');
-            $table->string('status'); // Billed, Paid, Void
-            $table->dateTime('billed_dated');
-            $table->dateTime('paid_dated')->nullable();
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('invoices');
     }

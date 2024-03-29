@@ -8,26 +8,23 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('type'); // individual('i') or Business('b')
-            $table->string('email'); 
-            $table->string('address'); 
-            $table->string('city'); 
-            $table->string('state'); 
-            $table->string('postal_code');             
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('customers');
     }
