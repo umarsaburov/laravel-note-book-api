@@ -15,7 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('type'); // individual('i') or Business('b')
-
+            $table->string('email'); 
+            $table->string('address'); 
+            $table->string('city'); 
+            $table->string('state'); 
+            $table->string('postal_code');             
             $table->timestamps();
         });
     }
