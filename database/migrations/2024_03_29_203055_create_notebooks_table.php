@@ -6,14 +6,10 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('notebooks', function (Blueprint $table) {
+            $table->id();
             $table->string('full_name');
             $table->string('company')-> nullable();
             $table->string('phone');
@@ -34,3 +30,9 @@ return new class extends Migration
         Schema::dropIfExists('notebooks');
     }
 };
+
+     /**
+      * Run the migrations.
+      *
+      * @return void
+      */

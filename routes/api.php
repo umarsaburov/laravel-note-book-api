@@ -5,6 +5,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NotebookController;
 
 Route::prefix('v1')->group(function (){
+    Route::get('/notebook', 'App\Http\Controllers\NotebookController@index');
+    Route::post('/notebook', 'App\Http\Controllers\NotebookController@store');
+    Route::get('/notebook/{id}', 'App\Http\Controllers\NotebookController@show');
+    Route::post('/notebook/{id}', 'App\Http\Controllers\NotebookController@update');
+    Route::delete('/notebook/{id}', 'App\Http\Controllers\NotebookController@destroy');
+
+});
+
+/*
+|-------------------------last version----------------------------------
+Route::prefix('v1')->group(function (){
     Route::get('/notebook', [NotebookController::class, 'index']);
     Route::post('/notebook', [NotebookController::class, 'store']);
     Route::get('/notebook/{id}', [NotebookController::class, 'show']);
@@ -12,8 +23,7 @@ Route::prefix('v1')->group(function (){
     Route::delete('/notebook/{id}', [NotebookController::class, 'destroy']);
 
 });
-
-/*
+|--------------------------------------------------------------------------
 |--------------------------------------------------------------------------
 | API Routes
 |--------------------------------------------------------------------------
